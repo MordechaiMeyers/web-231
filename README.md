@@ -1,1 +1,5 @@
-# web-231
+# web-231 enterprise JavaScript I
+
+## Contributors
+* Robert Kumar
+* Mordechai Meyers
