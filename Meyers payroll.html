@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Payroll System</title>
+<link href="site.css" rel="stylesheet">
+<script>
+// JavaScript variables for employee 1
+var firstNameLudwig = "Ludwig";
+var lastNameLudwig = "Beethoven";
+var addressLudwig = "123 Main Street";
+var payRateLudwig = 12.50;
+var hireDateLudwig = new Date().toLocalDateString("en-US");
+
+// JavaScript variables for employee 2
+var firstNameMozart = "Wolfgang Amadeus";
+var lastNameMozart = "Mozart";
+var addressMozart = "456 Elm Street";
+var payRateMozart = 15.00;
+var hireDateMozart = new Date().toLocalDateString("en-US");
+
+// JavaScript variables for employee 3
+var firstNameBeethoven = "Johannes";
+var lastNameBeethoven = "Beethoven";
+var addressBeethoven = "789 Oak Street";
+var payRateBeethoven = 17.50;
+var hireDateBeethoven = new Date().toLocalDateString("en-US");
+
+// Bind the values to the HTML elements
+document.getElementById("txtFirstNameLudwig").innerHTML = firstNameLudwig;
+document.getElementById("txtLastNameLudwig").innerHTML = lastNameLudwig;
+document.getElementById("txtAddressLudwig").innerHTML = addressLudwig;
+document.getElementById("txtPayRateLudwig").innerHTML = payRateLudwig.toFixed(1);
+document.getElementById("txtHireDateLudwig").innerHTML = hireDateLudwig;
+
+document.getElementById("txtFirstNameMozart").innerHTML = firstNameMozart;
+document.getElementById("txtLastNameMozart").innerHTML = lastNameMozart;
+document.getElementById("txtAddressMozart").innerHTML = addressMozart;
+document.getElementById("txtPayRateMozart").innerHTML = payRateMozart.toFixed(1);
+document.getElementById("txtHireDateMozart").innerHTML = hireDateMozart;
+
+document.getElementById("txtFirstNameBeethoven").innerHTML = firstNameBeethoven;
+document.getElementById("txtLastNameBeethoven").innerHTML = lastNameBeethoven;
+document.getElementById("txtAddressBeethoven").innerHTML = addressBeethoven;
+document.getElementById("txtPayRateBeethoven").innerHTML = payRateBeethoven.toFixed(1);
+document.getElementById("txtHireDateBeethoven").innerHTML = hireDateBeethoven;
+</script>
+</head>
+<body>
+<h1 id="payroll-header">Payroll System</h1>
+<h3>Employee record 1</h3>
+<ul>
+<li id="txtFirstNameLudwig">Ludwig</li>
+<li id="txtLastNameLudwig">Beethoven</li>
+<li id="txtAddressLudwig">123 Main Street</li>
+<li id="txtPayRateLudwig">$12.50</li>
+<li id="txtHireDateLudwig">2023-08-21</li>
+</ul>
+<h3>Employee record 2</h3>
+<ul>
+<li id="txtFirstNameMozart">Wolfgang Amadeus</li>
+<li id="txtLastNameMozart">Mozart</li>
+<li id="txtAddressMozart">456 Elm Street</li>
+<li id="txtPayRateMozart">$15.00</li>
+<li id="txtHireDateMozart">2023-08-22</li>
+</ul>
+<h3>Employee record 3</h3>
+<ul>
+<li id="txtFirstNameBeethoven">Johannes</li>
+<li id="txtLastNameBeethoven">Beethoven</li>
+<li id="txtAddressBeethoven">789 Oak Street</li>
+<li id="txtPayRateBeethoven">$17.50</li>
+<li id="txtHireDateBeethoven">2023-08-23</li>
+</ul>
+<a href="html.index.html" class="return-home">Return Home</a>
+</body>
+</html
