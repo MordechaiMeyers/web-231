@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Assignment 3.2 </title> 
+<link rel="stylesheet" href="Meyers Temp Conversation.css">
+<link href="https://fonts.googleapis.com/css2?family=Oswald|Verdana|Arial|sans-serif&display=swap" rel="stylesheet">
+<style>
+.conversion-results {
+  text-align: center;
+  font-size: 28px;
+}
+</style>
+</head>
+<body>
+    <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
+<div class="card">
+  <h2 class="card-title">Fahrenheit to Celsius Converter</h2>
+  <div class="form-field">
+    <label for="txtFahrenheit">Fahrenheit value:</label>
+    <input type="number" id="txtFahrenheit">
+  </div>
+  <button class="form-field">Convert Temperature</button>
+</div>
+<div class="card-content">
+  <h2 id="conversion-results">Conversion Results</h2>
+</div>
+<script>
+function convertFahrenheit() {
+  const fahrenheit = parseFloat(document.getElementById("txtFahrenheit").value);
+  const celsius = (fahrenheit - 32) / 1.8;
+ const roundedCelsius = Math.round(celsius * 100) / 100;
+
+  document.getElementById("txtFahrenheit").value = fahrenheit;
+  document.getElementById("conversion-results").innerHTML = `
+    <h2>Conversion Results</h2>
+    <br>${roundedCelsius}°C
+  `;
+}
+</script>
+<a href="html.index.html" class="return-home">Return Home</a>
+</body>
+</html>
