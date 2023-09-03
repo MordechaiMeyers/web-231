@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Assignment 4.2</title>
+<link href="Meyers number game.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald|Verdana|Arial|sans-serif&display=swap" rel="stylesheet">
+</head>
+<body>
+<script>
+    const rnd = Math.floor(Math.random() * 10) + 1;
+
+const h1 = document.createElement("h1");
+h1.classList.add("app-header");
+h1.textContent = "Welcome to the numbers game!";
+
+const cardTitle = document.createElement("h2");
+cardTitle.textContent = "Pick a number between 1 and 10";
+
+const formFieldLabel = document.createElement("label");
+formFieldLabel.textContent = "Guess the number:";
+
+const txtMyNumber = document.createElement("input");
+txtMyNumber.type = "number";
+txtMyNumber.id = "txtMyNumber";
+
+const btnSubmit = document.createElement("button");
+btnSubmit.textContent = "Submit";
+btnSubmit.id = "btnSubmit";
+
+btnSubmit.onclick = function() {
+  // Capture the inputted value from txtMyNumber and assign it to a variable named myNumber
+  const myNumber = document.getElementById("txtMyNumber").value;
+
+  // Using if...else if...else, compare the myNumber variable from 6.b. against the rnd variable from 1.a.
+  let message;
+  if (myNumber > rnd) {
+    message = "The number is less than " + myNumber;
+  } else if (myNumber < rnd) {
+    message = "The number is greater than " + myNumber;
+  } else if (myNumber === rnd) {
+    message = "Congratulations! You picked the correct number!";
+  }
+
+  // Bind the message to the results card content
+  document.getElementById("results").innerHTML = message;
+};
+
+document.body.appendChild(h1);
+document.body.appendChild(cardTitle);
+document.body.appendChild(formFieldLabel);
+document.body.appendChild(txtMyNumber);
+document.body.appendChild(btnSubmit);
+
+</script>
+<div class="card-title">
+    Results
+  </div>
+  <a href="html.index.html" class="return-home">Return Home</a>
+  </body>
+</html>
