@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment 5.2 </title>
+    <link rel="stylesheet" href="Meyers Sequnce Game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald|Verdana|Arial|sans-serif&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="app-header">Welcome to the sequence game!</h1>
+<div class="card-title">Sequence Selection Form</div>
+<label for="sequence" class="form-field-label">Choose a number sequence</label>
+<select id="sequence" class="drop-down-menu">
+  <option value="select">--Select--</option>
+  <option value="fibonacci">Fibonacci Sequence</option>
+  <option value="even">Even Numbers</option>
+  <option value="odd">Odd Numbers</option>
+</select>
+<button id="btnDisplaySequence">Display Sequence</button>
+<script>
+    const btnDisplaySequence = document.getElementById("btnDisplaySequence");
+
+btnDisplaySequence.addEventListener("click", () => {
+  // Capture the value from the select list
+  const choice = document.getElementById("sequence").value;
+
+  // Compare choice against the string values: fibonacci, even, and odd
+  if (choice === "fibonacci") {
+    // Create a while loop that builds a string value of all fibonacci numbers that are less than 40
+    const fibonacciSequenceText = "";
+    const num1 = 0;
+    const num2 = 1;
+    let next;
+
+    while (num2 < 40) {
+      next = num1 + num2;
+      fibonacciSequenceText += num1 + ", ";
+      num1 = num2;
+      num2 = next;
+    }
+
+    // Bind the string to the results card-content div
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = fibonacciSequenceText.slice(0, -2);
+  } else if (choice === "even") {
+    // Create a do...while loop that builds a string of even numbers that are less than 20
+    const evenNumbersText = "";
+    let number = 0;
+
+    do {
+      if (number % 2 === 0) {
+        evenNumbersText += number + ", ";
+      }
+      number++;
+    } while (number < 20);
+
+    // Bind the string to the results card-content div
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = evenNumbersText.slice(0, -2);
+  } else if (choice === "odd") {
+    // Create a for loop that builds a string of odd numbers that are less than 20
+    const oddNumbersText = "";
+    for (let number = 1; number < 20; number += 2) {
+      oddNumbersText += number + ", ";
+    }
+
+    // Bind the string to the results card-content div
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = oddNumbersText.slice(0, -2);
+  } else {
+    // The user selected "select", so alert an error message
+    alert("Invalid selection, please try again!");
+  }
+});
+</script>
+<div class="card-title">Sequence Results</div>
+<a href="html.index.html" class="return-home">Return to Home</a>
+
+</body>
+</html>
