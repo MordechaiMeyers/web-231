@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment 6.2</title>
+    <link rel="stylesheet" href="Meyers in n out books .css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald|Verdana|Arial|sans-serif&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-header">
+        <h1>Welcome to In-N-Out-Books</h1>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">
+          My Favorites
+        </div>
+    
+        <form>
+          <div class="form-field">
+            <label for="favoriteList">Choose a listing</label>
+            <select id="favoriteList" class="drop-down-menu">
+              <option value="select">--Select--</option>
+              <option value="books">Top 3 Favorite Books</option>
+              <option value="authors">Top 3 Favorite Authors</option>
+            </select>
+          </div>
+    
+          <button id="btnDisplayListing">Display Listing</button>
+        </form>
+      </div>
+    
+      <div id="books" style="display: none;">
+        <table>
+          <thead>
+            <tr>
+              <th>ISBN</th>
+              <th>Title</th>
+              <th>Pages</th>
+            </tr>
+          </thead>
+    
+          <tbody id="bookList"></tbody>
+        </table>
+      </div>
+    
+      <div id="authors" style="display: none;">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Genre</th>
+            </tr>
+          </thead>
+    
+          <tbody id="authorList"></tbody>
+        </table>
+      </div>
+      <script>
+        // Create object literals for your top 3 favorite books
+        const book1 = {
+          isbn: "9789655241679",
+          title: "Meditations at Twilight on Genesis",
+          pages: 250,
+        };
+        
+        const book2 = {
+          isbn: "9780439358071",
+          title: "Harry Potter and the Order of the Phoenix",
+          pages: 896,
+        };
+        
+        const book3 = {
+          isbn: "9781578194964",
+          title: "2000 Years of Jewish History",
+          pages: 200,
+        };
+        
+        // Create object literals for your top 3 favorite authors
+        const author1 = {
+          name: "Rabbi Melvin Granatstein",
+          genre: "religion",
+        };
+        
+        const author2 = {
+          name: "J.K Rowling",
+          genre: "adventure,fantasy",
+        };
+        
+        const author3 = {
+          name: "Rabbi Nachman Zakon",
+          genre: "history",
+        };
+        
+        // Create an array to store all of the book objects
+        const books = [
+          book1,
+          book2,
+          book3,
+        ];
+        
+        // Create an array to store all of the author objects
+        const authors = [
+          author1,
+          author2,
+          author3,
+        ];
+        
+        // Get the elements for the books table and the authors table
+        const booksDiv = document.getElementById("books");
+        const authorsDiv = document.getElementById("authors");
+        
+        // Get the element for the drop-down menu
+        const favoriteList = document.getElementById("favoriteList");
+        
+        // Hide both tables initially
+        booksDiv.style.display = "none";
+        authorsDiv.style.display = "none";
+        
+        // Listen for the change event on the drop-down menu
+        favoriteList.addEventListener("change", function() {
+          // Hide both tables
+          booksDiv.style.display = "none";
+          authorsDiv.style.display = "none";
+        
+          // Show the appropriate table based on the selected listing
+          if (favoriteList.value === "books") {
+            booksDiv.style.display = "block";
+          } else if (favoriteList.value === "authors") {
+            authorsDiv.style.display = "block";
+          }
+        });
+        
+        // Iterate over the books array and add the data to the bookList table body
+        const bookList = document.getElementById("bookList");
+        
+        for (const book of books) {
+          // Create a new table row
+          const newRow = bookList.insertRow(-1);
+        
+          // Add the book data to the new table row
+          newRow.appendChild(document.createElement("td")).innerHTML = book.isbn;
+          newRow.appendChild(document.createElement("td")).innerHTML = book.title;
+          newRow.appendChild(document.createElement("td")).innerHTML = book.pages;
+        }
+        
+        // Iterate over the authors array and add the data to the authorList table body
+        const authorList = document.getElementById("authorList");
+        
+        for (const author of authors) {
+          // Create a new table row
+          const newRow = authorList.insertRow(-1);
+        
+          // Add the author data to the new table row
+          newRow.appendChild(document.createElement("td")).innerHTML = author.name;
+          newRow.appendChild(document.createElement("td")).innerHTML = author.genre;
+        }
+        </script>
+        
+      <a href="html.index.html" class="return-home">Return Home</a>
+    
+</body>
+</html>
