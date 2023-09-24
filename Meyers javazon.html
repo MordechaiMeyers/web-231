@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>7.2</title>
+  <link rel="stylesheet" href="Meyers javazon.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald|Verdana|Arial|sans-serif&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1 class="app-header">Welcome to the Javazon App!</h1>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Javazon Selection Form</h3>
+        </div>
+        <div class="card-content">
+            <form-field label="Choose a listing.">
+                <select list class="drop-down-menu" id="listing">
+                    <option value="select">--Select--</option>
+                    <option value="products">Products</option>
+                    <option value="services">Services</option>
+                    <option value="employees">Employees</option>
+                </select>
+            </form-field>
+            <button id="btnDisplayListing">Display Listing</button>
+        </div>
+    </div>
+
+    <div id="products" class="card" style="display: none;">
+        <div class="card-header">
+            <h3 class="card-title">Javazon Products</h3>
+        </div>
+        <div class="card-content">
+            <table id="productsTable" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total Value</th>
+                    </tr>
+                </thead>
+                <tbody id="productsTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="services" class="card" style="display: none;">
+        <div class="card-header">
+            <h3 class="card-title">Javazon Services</h3>
+        </div>
+        <div class="card-content">
+            <table id="servicesTable" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Description</th>
+                        <th>Hourly Rate</th>
+                        <th>Minimum</th>
+                    </tr>
+                </thead>
+                <tbody id="servicesTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="employees" class="card" style="display: none;">
+        <div class="card-header">
+            <h3 class="card-title">Javazon Employees</h3>
+        </div>
+        <div class="card-content">
+            <table id="employeesTable" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody id="employeesTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <a href="index.html" class="return-home">Return Home</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
