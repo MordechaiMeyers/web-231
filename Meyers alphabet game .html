@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment 8.2</title>
+    <link rel="stylesheet" href="Meyers alphabet game .css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald|Verdana|Arial|sans-serif&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Welcome to the Alphabet Game!</h1>
+
+  <div class="card">
+    <h1 class="card-title">Letters in the Alphabet</h1>
+    <div class="card-content">
+      <p id="alphabet"></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h1 class="card-title">Alphabet Number Form</h1>
+    <div class="form-field">
+      <label>Alphabet Letter Position</label>
+      <input type="number" class="input" id="txtPosition">
+    </div>
+    <button type="button" class="btn btn-primary" id="btnFindLetter">Find Letter</button>
+  </div>
+
+  <div class="card">
+    <h1 class="card-title">Results</h1>
+    <div class="card-content" id="alphabet-letter"></div>
+  </div>
+
+  <a href="html.index.html" class="return-home">Return Home</a>
+
+  <script>
+    // Create a character array of all the letters in English alphabet and assign the array to variable named alphabet.
+    const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+    // Create a string variable named alphabetOutput and give it a default value of an empty string.
+    let alphabetOutput = "";
+
+    // Using JavaScript’s for/in loop, iterate over the alphabet array and build a string of the letters in the alphabet with each letter separated by a comma. Use the alphabetOutput variable to build the string.
+    for (let letter in alphabet) {
+      alphabetOutput += alphabet[letter] + ", ";
+    }
+
+    // Bind the alphabetOutput string to the alphabet div. Use JavaScript’s slice() operation to remove the trailing comma from the string (if, any).
+    document.getElementById("alphabet").innerHTML = alphabetOutput.slice(0, -2);
+
+    // Register an onclick event for btnFindLetter.
+    document.getElementById("btnFindLetter").addEventListener("click", function() {
+      // Capture the entered value and bind it to a variable named pos.
+      const pos = document.getElementById("txtPosition").value;
+
+      // Find the alphabet letter in the array that matches the entered position and assign it to a variable named letter.
+      const letter = alphabet[pos - 1];
+
+      // Using an if…else statement, compare letter against the JavaScript keyword undefined
+      if (letter === undefined) {
+        // Bind the string value “There are not <pos> letters in the alphabet” to the alphabet-letter div (Exhibit B, #2-3).
+        document.getElementById("alphabet-letter").innerHTML = "There are not " + pos + " letters in the alphabet.";
+      } else {
+        // Bind the string value “<letter> is at position <pos> in the alphabet” to the alphabet-letter div (Exhibit C, #2-3).
+        document.getElementById("alphabet-letter").innerHTML = letter + " is at position " + pos + " in the alphabet.";
+      }
+    });
+  </script>
+</body>
+</html>
